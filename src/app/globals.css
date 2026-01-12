@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(243, 244, 246);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background-color: rgb(26, 31, 58);
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 102, 204);
+  border-radius: 9999px;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 217, 255);
+  }
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(29, 78, 216);
+}
+
+/* Utility Classes */
+.container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background-color: rgb(0, 102, 204);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition-property: background-color, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.btn-primary:hover {
+  background-color: rgb(29, 78, 216);
+  transform: scale(1.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-primary:hover {
+    background-color: rgb(37, 99, 235);
+  }
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  background-color: rgb(0, 217, 255);
+  color: rgb(10, 14, 39);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition-property: background-color, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(34, 211, 238);
+  transform: scale(1.05);
+}
+
+.btn-outline {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid rgb(0, 102, 204);
+  color: rgb(0, 102, 204);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.btn-outline:hover {
+  background-color: rgb(0, 102, 204);
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-outline {
+    border-color: rgb(0, 217, 255);
+    color: rgb(0, 217, 255);
+  }
+
+  .btn-outline:hover {
+    background-color: rgb(0, 102, 204);
+    color: white;
+  }
+}
+
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  .card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(to right, rgb(0, 102, 204), rgb(0, 217, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: rgb(17, 24, 39);
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .section-title {
+    color: white;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: rgb(75, 85, 99);
+  margin-bottom: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section-subtitle {
+    color: rgb(156, 163, 175);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.transition-smooth {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
