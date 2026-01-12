@@ -16,13 +16,13 @@ export default function BlogPage() {
           {featuredPosts.map((post) => (
             <BlogCard
               key={post.slug}
+              slug={post.slug}
               title={post.title}
               excerpt={post.excerpt}
               date={post.date}
               author={post.author}
               category={post.category}
               image={post.image}
-              slug={post.slug}
             />
           ))}
         </div>

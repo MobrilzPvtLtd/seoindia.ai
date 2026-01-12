@@ -4,23 +4,23 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 interface BlogCardProps {
-  id: string;
+  slug: string;
   title: string;
   excerpt: string;
   date: string;
   author: string;
   category: string;
-  readTime: number;
+  image: string;
 }
 
 const BlogCard = ({
-  id,
+  slug,
   title,
   excerpt,
   date,
   author,
   category,
-  readTime,
+  image,
 }: BlogCardProps) => {
   return (
     <motion.article
@@ -35,11 +35,10 @@ const BlogCard = ({
         <span className="inline-block px-3 py-1 bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary text-xs font-semibold rounded-full">
           {category}
         </span>
-        <span className="text-xs text-gray-500 dark:text-gray-400">{readTime} min read</span>
       </div>
 
       {/* Title */}
-      <Link href={`/blog/${id}`}>
+      <Link href={`/blog/${slug}`}>
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary dark:group-hover:text-secondary transition-colors duration-300 line-clamp-2">
           {title}
         </h3>
@@ -55,7 +54,7 @@ const BlogCard = ({
           <time className="text-xs text-gray-500 dark:text-gray-400">{date}</time>
         </div>
         <Link
-          href={`/blog/${id}`}
+          href={`/blog/${slug}`}
           className="text-primary dark:text-secondary font-semibold hover:gap-2 transition-all duration-300"
         >
           →
