@@ -63,16 +63,16 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-4">Services</h4>
             <ul className="space-y-2">
               {[
-                'AI Development',
-                'Web Development',
-                'Mobile Apps',
-                'Data Analytics',
-                'Consulting',
+                { name: 'AI & ML Development', slug: 'ai-ml-development' },
+                { name: 'Web Development', slug: 'web-development' },
+                { name: 'Mobile Apps', slug: 'mobile-app-development' },
+                { name: 'Data Analytics', slug: 'data-analytics' },
+                { name: 'Tech Consulting', slug: 'tech-consulting' },
               ].map((service) => (
-                <li key={service}>
-                  <a href="#" className="text-gray-400 hover:text-secondary transition-colors duration-300">
-                    {service}
-                  </a>
+                <li key={service.slug}>
+                  <Link href={`/services/${service.slug}`} className="text-gray-400 hover:text-secondary transition-colors duration-300">
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>

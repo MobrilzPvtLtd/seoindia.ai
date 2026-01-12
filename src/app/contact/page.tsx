@@ -52,7 +52,7 @@ export default function ContactPage() {
     {
       icon: <Phone size={24} />,
       title: 'Phone',
-      details: ['+91 70425731200', '+91 9123456789'],
+      details: ['+91 70425731200'],
     },
     {
       icon: <MapPin size={24} />,
